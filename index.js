@@ -41,22 +41,18 @@ const form  = {
     password: () => document.getElementById('password')
 };
 
-const registerButton = document.getElementById('register-button');
-const message = document.getElementById('message');
+const instagramLoginButton = document.getElementById('instagram-login-button');
 
-registerButton.addEventListener('click', () => {
-    if (isFormValid()) {
-        message.style.display = 'block';
-    }
+instagramLoginButton.addEventListener('click', () => {
+    window.location.href = "https://www.instagram.com/oauth/authorize?client_id=7533903633314856&redirect_uri=https://nathaliadarocha07.github.io/user-registration/&response_type=token";
+});
 
-const accessToken = 'IGQWROZA0lGOGE2ZAnk3YzlRSzhJbnBuV1RYVi1GSjYzaUkyd3FZAdGg3eThVbWRuZAUkxeWttN2x0QU1HanBoZA0xpYUlMWDZALODZAXd0FFeXhYRHpRXzBVV3RzMTRTT0Q3RzZA3bXM4ZAVQ5Nnp2bGpLSXpqYXpualoyS0kZD';
-const url = 'https://graph.instagram.com/me?fields=id,username&access_token=' + accessToken;
+const accessToken = "IGQWRNb2ItdkNnU1VPdHliYVNVMElGandzWkRrVFFuWDNjZAUhFN2tseGFadlFnT3Nrd1FzNEpFNHlJNXN1ci0zUVZAlQ3I1NWhFZAlJETWwtellNRnNtN0FvVkl5VmRIY1otcDlpXzJRTi1Mcjg4SHVGRnJhRjJqanMZD";
+const url = 'https://graph.instagram.com/me?fields=id,username&access_token='+accessToken;
 
 fetch(url)
     .then(response => response.json())
     .then(data => {
-        console.log('Informações do perfil:', data);
+        console.log('Informações do perfil:',data);
     })
-    .catch(error => console.error('Erro ao fazer a solicitação:', error));
-});
-
+    .catch(error => console.error('Erro ao fazer a solicitação:',error));

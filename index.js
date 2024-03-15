@@ -40,3 +40,12 @@ const form  = {
     email: () => document.getElementById('email'),
     password: () => document.getElementById('password')
 };
+
+const registerButton = document.getElementById('register-button');
+const message = document.getElementById('message');
+
+registerButton.addEventListener('click', () => {
+    if (isFormValid()) {
+        message.style.display = 'block';
+    }
+});

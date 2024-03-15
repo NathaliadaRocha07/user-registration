@@ -48,4 +48,15 @@ registerButton.addEventListener('click', () => {
     if (isFormValid()) {
         message.style.display = 'block';
     }
+
+const accessToken = 'IGQWROZA0lGOGE2ZAnk3YzlRSzhJbnBuV1RYVi1GSjYzaUkyd3FZAdGg3eThVbWRuZAUkxeWttN2x0QU1HanBoZA0xpYUlMWDZALODZAXd0FFeXhYRHpRXzBVV3RzMTRTT0Q3RzZA3bXM4ZAVQ5Nnp2bGpLSXpqYXpualoyS0kZD';
+const url = 'https://graph.instagram.com/me?fields=id,username&access_token=' + accessToken;
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log('Informações do perfil:', data);
+    })
+    .catch(error => console.error('Erro ao fazer a solicitação:', error));
 });
+

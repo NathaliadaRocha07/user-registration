@@ -44,7 +44,7 @@ const form  = {
 const instagramLoginButton = document.getElementById('instagram-login-button');
 
 instagramLoginButton.addEventListener('click', () => {
-    window.location.href = "https://www.instagram.com/oauth/authorize?client_id=7533903633314856&redirect_uri=https://nathaliadarocha07.github.io/user-registration/&response_type=token";
+    window.location.href = "https://www.instagram.com/dialog/oauth?client_id=753390363331485&display=page&extras={\"setup\":{\"channel\":\"IG_API_ONBOARDING\"}}&redirect_uri=https://my-clever-redirect-url.com/success/&response_type=token&scope=instagram_basic,instagram_content_publish,instagram_manage_comments,instagram_manage_insights,pages_show_list,pages_read_engagement";
 });
 
 const accessToken = "IGQWRNb2ItdkNnU1VPdHliYVNVMElGandzWkRrVFFuWDNjZAUhFN2tseGFadlFnT3Nrd1FzNEpFNHlJNXN1ci0zUVZAlQ3I1NWhFZAlJETWwtellNRnNtN0FvVkl5VmRIY1otcDlpXzJRTi1Mcjg4SHVGRnJhRjJqanMZD";
@@ -56,3 +56,4 @@ fetch(url)
         console.log('Informações do perfil:',data);
     })
     .catch(error => console.error('Erro ao fazer a solicitação:',error));
+
